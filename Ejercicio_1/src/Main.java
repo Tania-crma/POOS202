@@ -9,10 +9,10 @@ public class Main {
         String pass = sc.nextLine();
 
         if (pass.equals(password)) {
-            System.out.println("El usuario se encuentra con exito");
+            System.out.println("Contraseña correcta.");
         }
         else {
-            System.out.println("El usuario no se encuentra con exito");
+            System.out.println("Contraseña incorrecta");
         }
     }
 }
