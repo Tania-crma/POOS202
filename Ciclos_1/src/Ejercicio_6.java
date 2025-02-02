@@ -2,17 +2,34 @@ import java.util.Scanner;
 
 public class Ejercicio_6 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int saldo = 0;
 
-        System.out.print("Ingrese que operacion desea realizar: ");
-        System.out.println("D 100");
-        System.out.print("R 50");
-        int operacion = sc.nextInt();
+        System.out.println("Ingrese operación (D 100 / R 50) o línea vacía para finalizar:");
 
-        if (operacion == 100) {
-            System.out.println("El resultado es: 100");
-        } else if (operacion == 50) {
-            System.out.println("El resultado es: 50");
+        while (true) {
+            String entrada = scanner.nextLine().trim();
+
+            if (entrada.isEmpty()) {
+                break;
+            }
+
+            if (entrada.equals("D 100")) {
+                saldo += 100;
+            } else if (entrada.equals("R 50")) {
+                if (saldo >= 50) {
+                    saldo -= 50;
+                } else {
+                    System.out.println("Fondos insuficientes.");
+                }
+            } else {
+                System.out.println("Operación no válida. Use 'D 100' para depositar o 'R 50' para retirar.");
+            }
         }
+
+        System.out.println("Saldo final: " + saldo + " pesos");
+        scanner.close();
     }
 }
+
+
