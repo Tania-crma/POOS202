@@ -2,13 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
         //creamos eñ primer objeto
-        Spartan masterChief = new Spartan();
-
-        //usamos sus atributos
-        masterChief.nombre = "John";
-        masterChief.salud = 100;
-        masterChief.escudo = 70;
-        masterChief.armasPrincipal = "Rifle de asalto";
+        Spartan masterChief = new Spartan("John",100,70,"Rifle de asalto");
 
         //invocamos los metodos
         masterChief.mostrarinfo();
@@ -16,13 +10,16 @@ public class Main {
         masterChief.recargarArma(75);
         masterChief.correr(true);
 
-        //creamos a segundo objeto
-        Spartan superheroe = new Spartan();
+        //intento de uso de un metodo privado
+        //masterChief.consultaCortana();
 
-        superheroe.nombre = "Lady Bug";
-        superheroe.salud = 100;
-        superheroe.escudo = 90;
-        superheroe.armasPrincipal = "Yoyo";
+        //usamos get y set para cambiar atributo nombre
+        masterChief.setNombre("Tania");
+        masterChief.mostrarinfo();
+        System.out.println(masterChief.getNombre());
+
+        //creamos a segundo objeto
+        Spartan superheroe = new Spartan("Lady Bug",70,90,"Yoyo");
 
         superheroe.mostrarinfo();
         superheroe.atacar("Hotmod");
