@@ -2,6 +2,9 @@ import javax.swing.*;
 
 public class Main {
 
+    public Main() {
+    }
+
     public static void main(String[] args) {
 
         JOptionPane.showMessageDialog(null, "¡Hola!, Bienvenido a tu banco");
@@ -20,14 +23,13 @@ public class Main {
 
         JOptionPane.showMessageDialog(null, "El usuario ingresado es: " + cuenta + "\nNúmero de cuenta: " + no_cuenta);
 
-        // Crear la cuenta del usuario fuera del bucle
         Cuenta usuario = new Cuenta();
         usuario.setTitular(cuenta);
-        usuario.setNoCuenta(no_cuenta);
+        usuario.setNo_cuenta(no_cuenta);
 
         boolean salir = false;
 
-        while (!salir) { // Corrección aquí
+        while (!salir) {
             String op = JOptionPane.showInputDialog(
                     "Seleccione una opción:\n" +
                             "1. Consultar datos\n" +
@@ -42,7 +44,7 @@ public class Main {
                 case "1":
                     JOptionPane.showMessageDialog(null,
                             "Usuario: " + usuario.getTitular() +
-                                    "\nNúmero de Cuenta: " + usuario.getNoCuenta() +
+                                    "\nNúmero de Cuenta: " + usuario.getNo_cuenta() +
                                     "\nSaldo: $" + usuario.getSaldo() +
                                     "\nEdad: " + usuario.getEdad());
                     break;

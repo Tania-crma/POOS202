@@ -2,12 +2,19 @@ import javax.swing.*;
 
 public class Cuenta {
 
-    String titular;
-    int no_cuenta, edad = 21;
-    double saldo;
+    private String titular;
+    private int no_cuenta, edad = 21;
+    private double saldo;
 
     public Cuenta() {
         saldo = 100;
+    }
+
+    public Cuenta(String titular, int edad, int no_cuenta, double saldo) {
+        this.titular = titular;
+        this.edad = edad;
+        this.no_cuenta = no_cuenta;
+        this.saldo = saldo;
     }
 
     public void informacion() {
@@ -49,28 +56,36 @@ public class Cuenta {
         }
     }
 
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    public int getNoCuenta() {
+    public int getNo_cuenta() {
         return no_cuenta;
+    }
+
+    public void setNo_cuenta(int no_cuenta) {
+        this.no_cuenta = no_cuenta;
     }
 
     public int getEdad() {
         return edad;
     }
 
-    public void setNoCuenta(int no_cuenta) {
-        this.no_cuenta = no_cuenta;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 }
 
