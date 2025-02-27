@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        metodos passwordManager = new metodos();
+        metodos passwordManager = new metodos(8,true,true,"");
         int opcion;
 
         do {

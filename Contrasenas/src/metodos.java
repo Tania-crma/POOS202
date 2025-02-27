@@ -2,10 +2,17 @@ import javax.swing.*;
 import java.util.Random;
 
 public class metodos {
-    int longitud = 8;
-    boolean incluirMayusculas = false;
-    boolean incluirEspeciales = false;
-    String passwordGenerado = "";
+    private int longitud = 8;
+    private boolean incluirMayusculas = false;
+    private boolean incluirEspeciales = false;
+    private String passwordGenerado = "";
+
+    public metodos(int longitud, boolean incluirMayusculas, boolean incluirEspeciales, String passwordGenerado) {
+        this.longitud = longitud;
+        this.incluirMayusculas = incluirMayusculas;
+        this.incluirEspeciales = incluirEspeciales;
+        this.passwordGenerado = passwordGenerado;
+    }
 
     public void solicitar() {
         String inputLongitud = JOptionPane.showInputDialog("Introduce la longitud de la contraseña:");
@@ -70,6 +77,38 @@ public class metodos {
         } else {
             JOptionPane.showMessageDialog(null, "La contraseña generada es: " + passwordGenerado);
         }
+    }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
+    }
+
+    public boolean isIncluirMayusculas() {
+        return incluirMayusculas;
+    }
+
+    public void setIncluirMayusculas(boolean incluirMayusculas) {
+        this.incluirMayusculas = incluirMayusculas;
+    }
+
+    public boolean isIncluirEspeciales() {
+        return incluirEspeciales;
+    }
+
+    public void setIncluirEspeciales(boolean incluirEspeciales) {
+        this.incluirEspeciales = incluirEspeciales;
+    }
+
+    public String getPasswordGenerado() {
+        return passwordGenerado;
+    }
+
+    public void setPasswordGenerado(String passwordGenerado) {
+        this.passwordGenerado = passwordGenerado;
     }
 
 }
